@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "font-reviver"
+version = "0.1.0"
+description = "revive your ancient, dead fonts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Alex Bloom"}]
+dependencies = ["fonttools>=4.50,<5", "Pillow>=10,<14"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1", "PyYAML>=6", "jsonschema>=4"]
+
+[project.scripts]
+font-reviver = "font_reviver.cli:main"
+
+[project.urls]
+Repository = "https://github.com/AlexBloom/font-reviver"
+Issues = "https://github.com/AlexBloom/font-reviver/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+font_reviver = ["*.html"]

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Font Reviver"
+  short_description: "Recover legacy fonts into a modern local collection"
+  default_prompt: "Use $font-reviver to inspect my font folder, recover usable fonts, and show the gallery and exceptions."
+policy:
+  allow_implicit_invocation: true

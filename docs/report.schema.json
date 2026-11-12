@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AlexBloom/font-reviver/docs/report.schema.json",
+  "title": "Font Reviver report v1",
+  "type": "object",
+  "required": ["schema_version", "version", "operation", "source_root", "output_root", "summary", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "version": {"type": "string"},
+    "operation": {"enum": ["scan", "convert"]},
+    "source_root": {"type": "string"},
+    "output_root": {"type": "string"},
+    "summary": {
+      "type": "object",
+      "required": ["source_entries", "included_files", "converted", "copied", "extracted", "skipped_online_only", "review_entries"],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "status", "fonts", "warnings"],
+        "properties": {
+          "source": {"type": "string"},
+          "status": {"type": "string"},
+          "error": {"type": "string"},
+          "warnings": {"type": "array", "items": {"type": "string"}},
+          "fonts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "kind", "resource_id", "sha256", "status"],
+              "properties": {
+                "id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                "kind": {"enum": ["modern", "extracted", "type1"]},
+                "resource_id": {"type": "string"},
+                "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                "status": {"enum": ["ready", "queued", "converted", "copied", "extracted", "missing_fontforge", "needs_review"]},
+                "output": {"type": "string"},
+                "output_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                "error": {"type": "string"},
+                "validation": {
+                  "type": "object",
+                  "required": ["faces", "warnings", "rendered", "macos_recognized"],
+                  "properties": {
+                    "faces": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["name", "glyphs", "face_index"]}},
+                    "warnings": {"type": "array", "items": {"type": "string"}},
+                    "rendered": {"const": true},
+                    "macos_recognized": {"type": ["boolean", "null"]}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
