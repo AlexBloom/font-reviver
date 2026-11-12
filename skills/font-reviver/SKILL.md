@@ -7,7 +7,7 @@ description: Inspect and recover local legacy font collections, converting scala
 
 **revive your ancient, dead fonts**
 
-Use the installed `font-reviver` CLI or `python -m font_reviver`. This skill does not bundle the app or any fonts. If absent, install from https://github.com/AlexBloom/font-reviver using its README; install FontForge separately for Type 1 conversion. Do not assume a particular user's filesystem, account, or font license.
+Use the installed `font-reviver` CLI or `python -m font_reviver`. If the agent shell has no activated environment, invoke `python /path/to/this/skill/scripts/run.py` with the same CLI arguments; it finds the CLI on PATH, the linked repository’s `.venv`, or the current Python installation. This skill does not bundle the app or any fonts. If absent, install from https://github.com/AlexBloom/font-reviver using its README; install FontForge separately for Type 1 conversion. Do not assume a particular user's filesystem, account, or font license.
 
 - Resolve the source folder and a separate destination from the request. Default output is a sibling named `<source> Revived`. Preserve original files and never install fonts unless separately requested.
 - Run `font-reviver doctor`, then `font-reviver scan SOURCE`. CLI stdout is JSON; inspection writes no fonts. Follow requested folder scope rather than expanding to unrelated collections.

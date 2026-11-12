@@ -57,3 +57,10 @@ def test_versioned_report_schema(tmp_path,font_factory):
     schema=json.loads((Path(__file__).parents[1]/'docs/report.schema.json').read_text())
     jsonschema.validate(scan_folder(source),schema)
     jsonschema.validate(convert_folder(source),schema)
+
+
+def test_portable_skill_runner():
+    import subprocess, sys
+    runner=Path(__file__).parents[1]/'skills/font-reviver/scripts/run.py'
+    result=subprocess.run([sys.executable,str(runner),'--version'],capture_output=True,text=True)
+    assert result.returncode==0 and result.stdout.strip()=='0.1.0'

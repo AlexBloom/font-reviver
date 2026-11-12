@@ -131,7 +131,7 @@ print(result["summary"])
 
 See [the interface contract](docs/INTERFACES.md), [report schema](docs/report.schema.json), and [portable agent skill](skills/font-reviver/SKILL.md).
 
-To install the skill, first install the CLI, then copy `skills/font-reviver/` into your agent's skill directory. For example, Codex uses `~/.codex/skills/font-reviver`; Claude Code commonly uses `~/.claude/skills/font-reviver`. Other agents can read `SKILL.md` directly or use the CLI contract. The optional `agents/openai.yaml` supplies display metadata only. A skill does not bundle or install fonts.
+To install the skill, first install the CLI, then copy `skills/font-reviver/` into your agent's skill directory. For example, Codex uses `~/.codex/skills/font-reviver`; Claude Code commonly uses `~/.claude/skills/font-reviver`. Other agents can read `SKILL.md` directly or use the CLI contract. The optional `agents/openai.yaml` supplies display metadata only. The included `scripts/run.py` adapter also works when an agent has not activated the app environment: it uses an installed CLI, a linked checkout’s `.venv`, or the current Python module. A skill does not bundle or install fonts.
 
 Example request: “Use Font Reviver to inspect `~/Desktop/Old Fonts`, convert the recoverable files into a separate folder, and show the gallery and exceptions.”
 

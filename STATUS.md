@@ -4,7 +4,7 @@ Font Reviver 0.1.0 is implemented as a local browser app, CLI, Python library an
 
 ## Verified locally
 
-- 12 automated checks passed on macOS with Python 3.15, including synthetic modern-font copying, collections, AppleDouble/resource extraction, ZIP path rejection, placeholder and symlink handling, non-destructive collisions, cache repeatability, FontForge conversion, JSON schema and HTTP authentication/result allowlisting.
+- 13 automated checks passed on macOS with Python 3.15, including synthetic modern-font copying, collections, AppleDouble/resource extraction, ZIP path rejection, placeholder and symlink handling, non-destructive collisions, cache repeatability, FontForge conversion, JSON schema and HTTP authentication/result allowlisting.
 - Wheel and source distribution build successfully.
 - Skill frontmatter/name validation passed.
 - Real resource-fork and malformed-header recovery checked using private local inputs kept outside this repository. No fonts or collection reports ship here.
