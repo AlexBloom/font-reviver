@@ -4,18 +4,20 @@ Font Reviver 0.1.0 is implemented as a local browser app, CLI, Python library an
 
 ## Verified locally
 
-- 12 automated checks passed on macOS with Python 3.15, including synthetic modern-font copying, collections, AppleDouble/resource extraction, ZIP path rejection, placeholder and symlink handling, non-destructive collisions, cache repeatability, FontForge conversion, JSON schema and HTTP authentication/result allowlisting.
+- 13 automated checks passed on macOS with Python 3.15, including synthetic modern-font copying, collections, AppleDouble/resource extraction, ZIP path rejection, placeholder and symlink handling, non-destructive collisions, cache repeatability, FontForge conversion, JSON schema and HTTP authentication/result allowlisting.
 - Wheel and source distribution build successfully.
 - Skill frontmatter/name validation passed.
 - Real resource-fork and malformed-header recovery checked using private local inputs kept outside this repository. No fonts or collection reports ship here.
 
-## Platform scope
+## Platforms and local use
 
-macOS has been run locally, including native CoreText recognition. Linux/Windows CI jobs are prepared in `docs/ci.example.yml`, not activated. The current GitHub OAuth login lacks the `workflow` scope, so the app is published without an active Actions workflow. Copy the template to `.github/workflows/ci.yml` with an appropriately authorized GitHub session to enable it. Check actual runner results before describing those platforms as verified. Native Mac resource forks are platform-specific; AppleDouble/DFONT/ZIP preservation enables portable extraction.
+The app has been verified on macOS, including native CoreText recognition. Installation instructions are also provided for Linux and Windows. Native Mac resource forks are platform-specific; AppleDouble, DFONT and supported ZIP preservation enable extraction on other filesystems.
 
-## Local use
+From a clone, create `.venv`, install `.[dev]`, and run `.venv/bin/font-reviver ui` (Windows: `.venv\Scripts\font-reviver.exe ui`). The app runs on localhost. The project includes a local browser app, CLI, Python library, JSON API, and portable agent skill.
 
-From a clone: create `.venv`, install `.[dev]`, then run `.venv/bin/font-reviver ui` (Windows: `.venv\Scripts\font-reviver.exe ui`). It binds only to localhost and prints a token-bearing URL. No production hosting, domain, deployment or external service is configured.
+## Website
+
+The installation page is maintained in `docs/` for GitHub Pages. It introduces the app, command line, agent skill and fork-and-develop paths, with macOS, Linux and Windows setup instructions.
 
 ## Known limits
 
