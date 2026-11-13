@@ -13,10 +13,10 @@ Use Python **3.10 or newer** (3.11+ recommended). Install FontForge separately f
 ### macOS
 
 ```sh
-brew install python fontforge
+brew install python git fontforge
 python3 -m venv ~/.venvs/font-reviver
 source ~/.venvs/font-reviver/bin/activate
-python -m pip install 'git+https://github.com/AlexBloom/font-reviver.git@dev'
+python -m pip install 'git+https://github.com/AlexBloom/font-reviver.git@main'
 font-reviver doctor
 font-reviver ui
 ```
@@ -28,10 +28,10 @@ The browser opens a local app. Paste a path such as `~/Desktop/Old Fonts`, inspe
 On Debian/Ubuntu, install `python3-venv`, `fontforge`, and `python3-fontforge` using your package manager. Then create a virtual environment and install the package as above. FontForge builds must support Python scripting.
 
 ```sh
-sudo apt-get install python3-venv fontforge python3-fontforge
+sudo apt-get install git python3-venv fontforge python3-fontforge
 python3 -m venv ~/.venvs/font-reviver
 . ~/.venvs/font-reviver/bin/activate
-python -m pip install 'git+https://github.com/AlexBloom/font-reviver.git@dev'
+python -m pip install 'git+https://github.com/AlexBloom/font-reviver.git@main'
 font-reviver ui
 ```
 
@@ -42,13 +42,13 @@ Install Python 3.10+ and a FontForge build with Python scripting from the [FontF
 ```powershell
 py -m venv "$HOME\.venvs\font-reviver"
 & "$HOME\.venvs\font-reviver\Scripts\Activate.ps1"
-python -m pip install 'git+https://github.com/AlexBloom/font-reviver.git@dev'
+python -m pip install 'git+https://github.com/AlexBloom/font-reviver.git@main'
 $env:FONTFORGE = 'C:\Program Files (x86)\FontForgeBuilds\bin\fontforge.exe'
 font-reviver doctor
 font-reviver ui
 ```
 
-Set `FONTFORGE` to the executable actually installed on your computer. Paths and FontForge packaging vary. The browser app and portable formats use the same engine on macOS, Linux, and Windows; native Mac resource forks require macOS or preservation as AppleDouble/DFONT/ZIP resources. See [platform verification](STATUS.md) for what has actually been tested.
+Set `FONTFORGE` to the executable actually installed on your computer. Paths and FontForge packaging vary. The browser app and portable formats use the same engine on macOS, Linux, and Windows; native Mac resource forks require macOS or preservation as AppleDouble/DFONT/ZIP resources. See [platform notes](STATUS.md) for details.
 
 ## Fork and develop
 
@@ -64,7 +64,7 @@ python -m pytest
 font-reviver ui
 ```
 
-Development happens on `dev`; `main` is the stable branch. The optional cross-platform CI template is `docs/ci.example.yml`; copy it to `.github/workflows/ci.yml` using a GitHub session authorized to manage workflows. There is no automatic website deployment. You can pin an installation to a reviewed commit instead of following a branch.
+Development happens on `dev`; `main` is the stable branch. You can pin an installation to a reviewed commit instead of following a branch.
 
 ## Command-line usage
 
