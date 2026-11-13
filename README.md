@@ -2,6 +2,8 @@
 
 **revive your ancient, dead fonts**
 
+[Website & installation options](https://alexbloom.design/font-reviver/)
+
 A local browser app, command-line tool, Python library, and portable agent skill for recovering legacy font collections. Point it at a folder on your desktop. Font Reviver copies modern fonts, extracts scalable suitcase fonts, converts recoverable PostScript outlines to OpenType, and builds a searchable gallery with **Expand all / Collapse all**.
 
 No account, hosted service, agent subscription, or cloud upload is required. **No font files are included in this repository.**

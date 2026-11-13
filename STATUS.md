@@ -17,7 +17,9 @@ From a clone, create `.venv`, install `.[dev]`, and run `.venv/bin/font-reviver 
 
 ## Website
 
-The installation page is maintained in `docs/` for GitHub Pages. It introduces the app, command line, agent skill and fork-and-develop paths, with macOS, Linux and Windows setup instructions.
+Live installation page: https://alexbloom.design/font-reviver/
+
+The site is served over HTTPS by GitHub Pages from `main:/docs`. The repository homepage points to the published page. It introduces the app, command line, agent skill and fork-and-develop paths, with macOS, Linux and Windows setup instructions.
 
 ## Known limits
 
